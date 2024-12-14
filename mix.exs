@@ -9,9 +9,9 @@ defmodule FSModEvent.Mixfile do
       description: description(),
       package: package(),
       source_url: "https://github.com/marcelog/elixir_mod_event",
-      elixir: "~> 1.0",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      elixir: "~> 1.14",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
   end
@@ -24,9 +24,9 @@ defmodule FSModEvent.Mixfile do
 
   defp description do
     """
-Elixir client for FreeSWITCH mod_event_socket.
+    Elixir client for FreeSWITCH mod_event_socket.
 
-Find the user guide in the github repo at: https://github.com/marcelog/elixir_mod_event.
+    Find the user guide in the github repo at: https://github.com/marcelog/elixir_mod_event.
     """
   end
 
@@ -43,10 +43,10 @@ Find the user guide in the github repo at: https://github.com/marcelog/elixir_mo
 
   defp deps do
     [
-      {:earmark, "~> 1.0.3", only: :dev},
-      {:ex_doc, "~> 0.14.5", only: :dev},
-      {:coverex, "~> 1.4.12", only: :test},
-      {:uuid, "~> 1.1.6"}
+      {:earmark, "~> 1.0", only: :dev},
+      {:ex_doc, "~> 0.14", only: :dev},
+      {:coverex, "~> 1.4", only: :test},
+      {:elixir_uuid, "~> 1.1"}
     ]
   end
 end
